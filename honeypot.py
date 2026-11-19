@@ -1,3 +1,4 @@
+from siem_client import enviar_alerta
 import socket
 import threading
 import paramiko
@@ -22,6 +23,7 @@ class ServidorFalso(paramiko.ServerInterface):
         with open("honeypot.log", "a") as log:
             log.write(linha_log)
         print(f"Capturado -> usuario: {username} | senha: {password}")
+        enviar_alerta(self.ip_atacante, username, password)
         return paramiko.AUTH_FAILED
 
 
