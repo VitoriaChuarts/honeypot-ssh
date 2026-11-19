@@ -3,3 +3,6 @@ honeypot.log
 senhas.txt
 honeypot.py.save
 
+
+chave_servidor.pub
+honeypot.log
